@@ -15,6 +15,7 @@ import ArticleList from "./components/article-list.component";
 import Article from "./components/article.component";
 import AddArticle from "./components/add-article.component";
 import Hooks from "./components/hook-component";
+import FileUpload from "./components/upload-component";
 
 class App extends Component{
 
@@ -74,6 +75,13 @@ class App extends Component{
                                     Example Hooks
                                 </Link>
                             </li>
+
+                            <li className="nav-item">
+                                <Link to="/upload" className="nav-link">
+                                    Example Upload
+                                </Link>
+                            </li>
+
 
                             {showAdminBoard && (
                                   <li className="nav-item">
@@ -153,6 +161,7 @@ class App extends Component{
                         <Switch>
                             <Route exact path={["/","/home"]} component={Home}/>
                             <Route exact path="/hook" component={Hooks}/>
+                            <Route exact path="/upload" component={FileUpload}/>
                             <Route exact path="/login" component={Login}/>
                             <Route exact path="/register" component={Register}/>
                             <Route exact path="/profile" component={Profile}/>
