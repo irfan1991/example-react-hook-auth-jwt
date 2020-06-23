@@ -14,8 +14,8 @@ import BoardAdmin from "./components/board-admin.component";
 import ArticleList from "./components/article-list.component";
 import Article from "./components/article.component";
 import AddArticle from "./components/add-article.component";
-import Hooks from "./components/hook-component";
-import FileUpload from "./components/upload-component";
+import Hooks from "./container/hook-component";
+import FileUpload from "./container/upload-component";
 
 class App extends Component{
 
@@ -72,13 +72,13 @@ class App extends Component{
 
                             <li className="nav-item">
                                 <Link to="/hook" className="nav-link">
-                                    Example Hooks
+                                    Hooks
                                 </Link>
                             </li>
 
                             <li className="nav-item">
                                 <Link to="/upload" className="nav-link">
-                                    Example Upload
+                                    Upload
                                 </Link>
                             </li>
 

@@ -1,0 +1,85 @@
+// import React, { Component } from "react";
+import React, { Component ,useState, useEffect } from 'react';
+import { connect } from "react-redux";
+import "bootstrap/dist/css/bootstrap.min.css";
+
+// class Hooks extends Component {
+
+     
+//     constructor(props){
+//         super(props);
+       
+//         this.state = {
+//             count : 0 ,
+                // test : null
+//         }
+    
+        
+//     }
+
+//     componentDidMount(){
+//         document.title = `Title Change: ${this.state.count}`
+//     }
+   
+//     componentDidUpdate(){
+//         document.title = `Title Change: ${this.state.count}`
+//     }
+
+//     componentWillUnmount(){
+//         document.title = `React App `
+//     }
+
+//     onUpdate = () => {
+//         this.setState({
+//             count : this.state.count + 1
+//         });
+//     }
+
+
+//     render(){
+//         return(
+//             <div className="container">
+//                 <p>Nilai saya saat ini adalah : {this.state.count} </p>
+//                 <button className="btn btn-primary" onClick={this.onUpdate}>Update Nilai</button>
+//             </div>
+//         );
+
+//     }
+
+
+// }
+
+const Hooks = (props) => {
+    const [count , setCount] =  useState(0);
+    // const [test , setTest] =  useState(nulll);
+
+    useEffect(() => {
+        document.title = `Title Change: ${count}`
+        return () => {
+            document.title = `React App`
+        }
+    });
+    
+    return(
+     
+        <div className="container">
+            {console.log(props)}
+            <p>Nilai saya saat ini adalah : {props.countFromGlobal} </p>
+            <button className="btn btn-primary" onClick={props.setCountFromGlobal}>Update Nilai</button>
+        </div>
+    );
+}
+
+function mapStateToProps(state) {
+    return {
+        countFromGlobal : state.counter.countGlobal
+    }
+}
+function mapDispatchToProps(dispatch) {
+    return {
+        setCountFromGlobal :  () => dispatch({type : "ADD_COUNT"}),
+    }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Hooks)
+

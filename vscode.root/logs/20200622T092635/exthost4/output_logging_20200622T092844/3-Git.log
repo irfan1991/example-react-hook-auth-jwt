@@ -1,0 +1,69 @@
+Looking for git in: git
+Using git 2.17.1 from git
+> git rev-parse --show-toplevel
+> git rev-parse --git-dir
+Open repository: /latreact/node-auth-jwt
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git check-ignore -v -z --stdin
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :server.js
+> git ls-files --stage -- /latreact/node-auth-jwt/server.js
+> git cat-file -s decdf6dc95b5f45f221f67b2a4580216f97db599
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git log --format=%H%n%aN%n%aE%n%at%n%ct%n%P%n%B -z -n21 -- /latreact/node-auth-jwt/resources/static/assets/tmp/undefined
+> git check-ignore -v -z --stdin
+> git show :server.js
+> git ls-files --stage -- /latreact/node-auth-jwt/server.js
+> git cat-file -s decdf6dc95b5f45f221f67b2a4580216f97db599
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git show :app/controllers/upload.controller.js
+> git ls-files --stage -- /latreact/node-auth-jwt/app/controllers/upload.controller.js
+> git cat-file -s b5e5eb038057dd61dc14ab2277d413bb78335a7b
+> git check-ignore -v -z --stdin
+> git show :app/middleware/upload.js
+> git ls-files --stage -- /latreact/node-auth-jwt/app/middleware/upload.js
+> git cat-file -s ba2b7bc989c707c6a47c4f6ba78286eb6143dad7
+> git show :app/controllers/upload.controller.js
+> git ls-files --stage -- /latreact/node-auth-jwt/app/controllers/upload.controller.js
+> git cat-file -s b5e5eb038057dd61dc14ab2277d413bb78335a7b
+> git check-ignore -v -z --stdin
+> git show :app/routes/upload.routes.js
+> git ls-files --stage -- /latreact/node-auth-jwt/app/routes/upload.routes.js
+> git cat-file -s 6146740fd1ea91bf711a024586366ebe5b68470e
+> git show :app/middleware/upload.js
+> git ls-files --stage -- /latreact/node-auth-jwt/app/middleware/upload.js
+> git cat-file -s ba2b7bc989c707c6a47c4f6ba78286eb6143dad7
+> git show :app/middleware/index.js
+> git ls-files --stage -- /latreact/node-auth-jwt/app/middleware/index.js
+> git cat-file -s 4cc951e7cf1e4c64d370a76f3e99d2d1bb422932
+> git show :app/middleware/upload.js
+> git ls-files --stage -- /latreact/node-auth-jwt/app/middleware/upload.js
+> git cat-file -s ba2b7bc989c707c6a47c4f6ba78286eb6143dad7
+> git show :app/routes/upload.routes.js
+> git ls-files --stage -- /latreact/node-auth-jwt/app/routes/upload.routes.js
+> git cat-file -s 6146740fd1ea91bf711a024586366ebe5b68470e
+> git show :app/controllers/upload.controller.js
+> git ls-files --stage -- /latreact/node-auth-jwt/app/controllers/upload.controller.js
+> git cat-file -s b5e5eb038057dd61dc14ab2277d413bb78335a7b
+> git show :app/routes/upload.routes.js
+> git ls-files --stage -- /latreact/node-auth-jwt/app/routes/upload.routes.js
+> git cat-file -s 6146740fd1ea91bf711a024586366ebe5b68470e

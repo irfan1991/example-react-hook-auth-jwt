@@ -2,6 +2,9 @@
     "telemetry.machineId": "8dea58c1b98e252e99e8f50499d62743f63fb8f0f27130c4fd67d63df4ec2a1b",
     "openedPathsList": {
         "workspaces3": [
+            "file:///latreact/my-redux",
+            "file:///latreact/node-auth-jwt",
+            "file:///latreact/my-lat3",
             "file:///latreact/my-lat2"
         ],
         "files2": []
@@ -40,8 +43,7 @@
                             "items": [
                                 {
                                     "id": "workbench.action.reopenClosedEditor",
-                                    "label": "&&Reopen Closed Editor",
-                                    "enabled": false
+                                    "label": "&&Reopen Closed Editor"
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
@@ -50,8 +52,38 @@
                                     "id": "openRecentFolder",
                                     "uri": {
                                         "$mid": 1,
-                                        "fsPath": "/latreact/my-lat2",
-                                        "external": "file:///latreact/my-lat2",
+                                        "fsPath": "/latreact/my-redux",
+                                        "external": "file:///latreact/my-redux",
+                                        "path": "/latreact/my-redux",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "/latreact/my-redux"
+                                },
+                                {
+                                    "id": "openRecentFolder",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "path": "/latreact/node-auth-jwt",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "/latreact/node-auth-jwt"
+                                },
+                                {
+                                    "id": "openRecentFolder",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "path": "/latreact/my-lat3",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "/latreact/my-lat3"
+                                },
+                                {
+                                    "id": "openRecentFolder",
+                                    "uri": {
+                                        "$mid": 1,
                                         "path": "/latreact/my-lat2",
                                         "scheme": "file"
                                     },
@@ -95,7 +127,8 @@
                     },
                     {
                         "id": "workbench.action.files.saveAs",
-                        "label": "Save &&As..."
+                        "label": "Save &&As...",
+                        "enabled": false
                     },
                     {
                         "id": "workbench.action.files.saveAll",
@@ -391,7 +424,8 @@
                                 },
                                 {
                                     "id": "workbench.action.togglePanel",
-                                    "label": "Show &&Panel"
+                                    "label": "Show &&Panel",
+                                    "checked": true
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
@@ -886,8 +920,7 @@
                     },
                     {
                         "id": "workbench.action.terminal.split",
-                        "label": "&&Split Terminal",
-                        "enabled": false
+                        "label": "&&Split Terminal"
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -1450,16 +1483,51 @@
     "themeBackground": "#1e1e1e",
     "windowsState": {
         "lastActiveWindow": {
-            "folder": "file:///latreact/my-lat2",
-            "backupPath": "/latreact/my-lat2/vscode.root/Backups/a9f51d50d65cc1e32c5005a23f12b075",
+            "folder": "file:///latreact/my-redux",
+            "backupPath": "/latreact/my-lat3/vscode.root/Backups/f477d7ab021706a041a4742a4fa9db9d",
             "uiState": {
                 "mode": 0,
-                "x": 93,
-                "y": 330,
+                "x": 205,
+                "y": 135,
                 "width": 1020,
-                "height": 711
+                "height": 525
             }
         },
-        "openedWindows": []
-    }
+        "openedWindows": [
+            {
+                "folder": "file:///latreact/my-redux",
+                "backupPath": "/latreact/my-lat3/vscode.root/Backups/f477d7ab021706a041a4742a4fa9db9d",
+                "uiState": {
+                    "mode": 0,
+                    "x": 205,
+                    "y": 135,
+                    "width": 1020,
+                    "height": 525
+                }
+            },
+            {
+                "folder": "file:///latreact/my-lat3",
+                "backupPath": "/latreact/my-lat3/vscode.root/Backups/37f8e2fe264676a5d3749aee7961dd4a",
+                "uiState": {
+                    "mode": 0,
+                    "x": 171,
+                    "y": 57,
+                    "width": 1024,
+                    "height": 711
+                }
+            },
+            {
+                "folder": "file:///latreact/node-auth-jwt",
+                "backupPath": "/latreact/my-lat3/vscode.root/Backups/9dad63b1822217c7f6fec5e9010f50ab",
+                "uiState": {
+                    "mode": 0,
+                    "x": 171,
+                    "y": 57,
+                    "width": 1024,
+                    "height": 711
+                }
+            }
+        ]
+    },
+    "pickerWorkingDir": "/latreact"
 }

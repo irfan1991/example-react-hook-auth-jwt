@@ -1,0 +1,17 @@
+Looking for git in: git
+Using git 2.17.1 from git
+> git rev-parse --show-toplevel
+> git rev-parse --git-dir
+Open repository: /latreact/my-lat2
+> git status -z -u
+> git show :src/components/home.component.js
+> git ls-files --stage -- /latreact/my-lat2/src/components/home.component.js
+> git symbolic-ref --short HEAD
+> git cat-file -s 5d54cf95fc6c3aba5a39c43ebb8876235dda8198
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git check-ignore -v -z --stdin
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
