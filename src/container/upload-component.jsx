@@ -1,6 +1,8 @@
 import React , {useState, useEffect } from "react";
 import { connect } from "react-redux";
 import UploadService from "../services/upload.service";
+import {RootContext} from "../App";
+import {GlobalConsumer} from "../context/context";
 
 const UploadFIles = (props) => {
 
@@ -46,7 +48,8 @@ const UploadFIles = (props) => {
 
 
     return (
-                <div>
+
+                        <div>
             {currentFile && (
                 <div className="progress">
                 <div
@@ -91,14 +94,18 @@ const UploadFIles = (props) => {
             </div>
 
             <hr />
-                    <h4>{props.countFromGlobal}</h4>
+                    <h4>{props.state.globalcounter}</h4>
             </div>
+                    
+                
     );
 };
-function mapStateToProps(state) {
-    return {
-        countFromGlobal : state.counter.countGlobal
-    }
-}
+// function mapStateToProps(state) {
+//     return {
+//         countFromGlobal : state.counter.countGlobal
+//     }
+// }
 
-export default connect(mapStateToProps)(UploadFIles)
+// export default connect(mapStateToProps)(UploadFIles)
+//export default UploadFIles;
+export default GlobalConsumer(UploadFIles);

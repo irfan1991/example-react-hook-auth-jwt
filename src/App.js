@@ -16,6 +16,7 @@ import Article from "./components/article.component";
 import AddArticle from "./components/add-article.component";
 import Hooks from "./container/hook-component";
 import FileUpload from "./container/upload-component";
+import GlobalProvider from "./context/context";
 
 class App extends Component{
 
@@ -26,11 +27,14 @@ class App extends Component{
         this.state = {
             showAdminBoard : false,
             showModeratorBoard : false,
-            currentUser : undefined
+            currentUser : undefined,
+         
         }
 
     }
 
+
+   
     componentDidMount(){
 
         const user = AuthService.getCurrentUser();
@@ -51,6 +55,8 @@ class App extends Component{
      //   window.location.reload(false);
     }
 
+
+    
     render(){
 
         const {currentUser, showModeratorBoard, showAdminBoard} = this.state;
@@ -58,126 +64,131 @@ class App extends Component{
         return(
 
             <Router>
-                <div>
-                    <nav className="navbar navbar-expand navbar-dark bg-dark">
-                        <Link to="/" className="navbar-brand">
-                        Simple App
-                        </Link>
-                        <div className="navbar-nav mr-auto">
-                            <li className="nav-item">
-                                <Link to="/home" className="nav-link">
-                                    Home
+             
+                    <div>
+                        <nav className="navbar navbar-expand navbar-dark bg-dark">
+                            <Link to="/" className="navbar-brand">
+                            Simple App
+                            </Link>
+                            <div className="navbar-nav mr-auto">
+                                <li className="nav-item">
+                                    <Link to="/home" className="nav-link">
+                                        Home
+                                    </Link>
+                                </li>
+
+                                <li className="nav-item">
+                                    <Link to="/hook" className="nav-link">
+                                        Hooks
+                                    </Link>
+                                </li>
+
+                                <li className="nav-item">
+                                    <Link to="/upload" className="nav-link">
+                                        Upload
+                                    </Link>
+                                </li>
+
+
+                                {showAdminBoard && (
+                                    <li className="nav-item">
+                                    <Link to="/admin" className="nav-link">
+                                        Admin Board
+                                    </Link>
+                                </li>
+                                )}
+
+
+                                {showModeratorBoard && (
+                                    <li className="nav-item">
+                                    <Link to="/mod" className="nav-link">
+                                        Moderator Board
+                                    </Link>
+                                </li>
+                                )}
+
+                                {currentUser && (
+                                <li className="nav-item">
+                                <Link to="/article" className="nav-link">
+                                    Articles
                                 </Link>
-                            </li>
+                                </li>
+                                
+                                )}
 
-                            <li className="nav-item">
-                                <Link to="/hook" className="nav-link">
-                                    Hooks
+                                {currentUser && (
+                                
+                                
+                                <li className="nav-item">
+                                <Link to="/add" className="nav-link">
+                                    Add
                                 </Link>
-                            </li>
-
-                            <li className="nav-item">
-                                <Link to="/upload" className="nav-link">
-                                    Upload
-                                </Link>
-                            </li>
+                                </li>
+                                )}
 
 
-                            {showAdminBoard && (
-                                  <li className="nav-item">
-                                  <Link to="/admin" className="nav-link">
-                                      Admin Board
-                                  </Link>
-                              </li>
-                            )}
+                            </div>
 
+                            {currentUser ? 
+                            (
+                            <div className="navbar-nav pull-right">
+                                <li className="nav-item">
+                                    <Link to="/profile" className="nav-link">
+                                        {currentUser.username}
+                                    </Link>
+                                </li>
 
-                            {showModeratorBoard && (
-                                  <li className="nav-item">
-                                  <Link to="/mod" className="nav-link">
-                                      Moderator Board
-                                  </Link>
-                              </li>
-                            )}
+                                <li className="nav-item">
+                                    <Link to="/" className="nav-link" onClick={this.logOut}>
+                                        Logut
+                                    </Link>
+                                </li>
 
-                            {currentUser && (
-                               <li className="nav-item">
-                               <Link to="/article" className="nav-link">
-                                 Articles
-                               </Link>
-                             </li>
-                              
-                            )}
+                            </div>
+                                ) : (
+                                <div className="navbar-nav  pull-right">
+                                <li className="nav-item">
+                                    <Link to="/login" className="nav-link">
+                                        Login
+                                    </Link>
+                                </li>
 
-                            {currentUser && (
-                             
-                             
-                             <li className="nav-item">
-                               <Link to="/add" className="nav-link">
-                                 Add
-                               </Link>
-                             </li>
-                            )}
+                                <li className="nav-item">
+                                    <Link to="/register" className="nav-link">
+                                        Sign Up
+                                    </Link>
+                                </li>
 
+                            </div>
+                                ) 
+                            }
+                        </nav>
 
+                        <div className="container mt-3">
+                            <Switch>
+                                <Route exact path={["/","/home"]} component={Home}/>
+                                <Route exact path="/hook" component={Hooks}/>
+                                <Route exact path="/upload" component={FileUpload}/>
+                                <Route exact path="/login" component={Login}/>
+                                <Route exact path="/register" component={Register}/>
+                                <Route exact path="/profile" component={Profile}/>
+                                <Route exact path="/mod" component={BoardModerator}/>
+                                <Route exact path="/admin" component={BoardAdmin}/>
+                                <Route exact path= "/article" component={ArticleList} />
+                                <Route exact path="/add" component={AddArticle} />
+                                <Route path="/article/:id" component={Article} />
+                            </Switch>
                         </div>
 
-                        {currentUser ? 
-                        (
-                        <div className="navbar-nav pull-right">
-                            <li className="nav-item">
-                                <Link to="/profile" className="nav-link">
-                                    {currentUser.username}
-                                </Link>
-                            </li>
-
-                            <li className="nav-item">
-                                <Link to="/" className="nav-link" onClick={this.logOut}>
-                                    Logut
-                                </Link>
-                            </li>
-
-                        </div>
-                            ) : (
-                            <div className="navbar-nav  pull-right">
-                            <li className="nav-item">
-                                <Link to="/login" className="nav-link">
-                                    Login
-                                </Link>
-                            </li>
-
-                            <li className="nav-item">
-                                <Link to="/register" className="nav-link">
-                                    Sign Up
-                                </Link>
-                            </li>
-
-                        </div>
-                            ) 
-                        }
-                    </nav>
-
-                    <div className="container mt-3">
-                        <Switch>
-                            <Route exact path={["/","/home"]} component={Home}/>
-                            <Route exact path="/hook" component={Hooks}/>
-                            <Route exact path="/upload" component={FileUpload}/>
-                            <Route exact path="/login" component={Login}/>
-                            <Route exact path="/register" component={Register}/>
-                            <Route exact path="/profile" component={Profile}/>
-                            <Route exact path="/mod" component={BoardModerator}/>
-                            <Route exact path="/admin" component={BoardAdmin}/>
-                            <Route exact path= "/article" component={ArticleList} />
-                            <Route exact path="/add" component={AddArticle} />
-                            <Route path="/article/:id" component={Article} />
-                        </Switch>
                     </div>
-
-                </div>
+              
+               
             </Router>
         );
 
     }
 
 }
-export default App;
+
+export default GlobalProvider(App);
+//export default App;

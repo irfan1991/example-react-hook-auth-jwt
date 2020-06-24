@@ -1,7 +1,8 @@
 // import React, { Component } from "react";
 import React, { Component ,useState, useEffect } from 'react';
-import { connect } from "react-redux";
+// import { connect } from "react-redux";
 import "bootstrap/dist/css/bootstrap.min.css";
+import {GlobalConsumer} from "../context/context";
 
 // class Hooks extends Component {
 
@@ -61,25 +62,29 @@ const Hooks = (props) => {
     });
     
     return(
-     
-        <div className="container">
-            {console.log(props)}
-            <p>Nilai saya saat ini adalah : {props.countFromGlobal} </p>
-            <button className="btn btn-primary" onClick={props.setCountFromGlobal}>Update Nilai</button>
-        </div>
+       
+                        <div className="container">
+                            {console.log(props)}
+                                  <p>Nilai saya saat ini adalah : {props.state.globalcounter} </p>
+                            <button className="btn btn-primary" onClick={()=> props.dispatch({type: "ADD_COUNTER"})}>Update Nilai</button>
+                         </div>
+                
     );
 }
 
-function mapStateToProps(state) {
-    return {
-        countFromGlobal : state.counter.countGlobal
-    }
-}
-function mapDispatchToProps(dispatch) {
-    return {
-        setCountFromGlobal :  () => dispatch({type : "ADD_COUNT"}),
-    }
-}
+// function mapStateToProps(state) {
+//     return {
+//         countFromGlobal : state.counter.countGlobal
+//     }
+// }
+// function mapDispatchToProps(dispatch) {
+//     return {
+//         setCountFromGlobal :  () => dispatch({type : "ADD_COUNT"}),
+//       //  setCountFromGlobal :  () => dispatch({addCount}),
+//     }
+// }
 
-export default connect(mapStateToProps,mapDispatchToProps)(Hooks)
+// export default connect(mapStateToProps,mapDispatchToProps)(Hooks)
+export default GlobalConsumer(Hooks)
+//export default Hooks
 
