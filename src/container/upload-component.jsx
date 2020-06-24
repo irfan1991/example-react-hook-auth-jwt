@@ -87,7 +87,8 @@ const UploadFIles = (props) => {
                 {fileInfos &&
                     fileInfos.map((file, index) => (
                     <li className="list-group-item" key={index}>
-                        <a href={file.url}>{file.name}</a>
+                        {console.log(file)}
+                        <a target="_blank" href={file.url} >{file.name}</a>
                     </li>
                     ))}
                 </ul>

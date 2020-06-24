@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8080/api/auth/";
+const API_URL = "https://node-js-jwt-irfan.herokuapp.com/api/auth/";
 
 class AuthService {
 

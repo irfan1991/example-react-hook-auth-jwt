@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route, Link  } from 'react-router-dom';
+import { createBrowserHistory } from 'history'
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
@@ -63,7 +64,7 @@ class App extends Component{
 
         return(
 
-            <Router>
+            <Router history={createBrowserHistory }>
              
                     <div>
                         <nav className="navbar navbar-expand navbar-dark bg-dark">
